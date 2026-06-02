@@ -154,7 +154,7 @@ export default function StagePage() {
 
             {/* FIXED HEADER */}
             {/* FIXED HEADER */}
-            <header className="fixed top-0 right-0 left-[72px] h-16 bg-[#f7f3f2] flex justify-between items-center px-8 z-40">
+            <header className="fixed top-0 right-0 left-18 h-16 bg-[#f7f3f2] flex justify-between items-center px-8 z-40">
                 <div className="flex items-center gap-2">
                     <span
                         className="text-gray-400 text-sm cursor-pointer hover:text-gray-600"

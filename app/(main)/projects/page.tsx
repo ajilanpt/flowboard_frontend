@@ -58,7 +58,7 @@ export default function Projects() {
         <div className="min-h-screen bg-[#f7f3f2]">
 
             {/* FIXED TOP HEADER BAR */}
-            <header className="fixed top-0 right-0 left-[72px] h-16 bg-white flex justify-between items-center px-8 border-b border-gray-100 z-40">
+            <header className="fixed top-0 right-0 left-18 h-16 bg-white flex justify-between items-center px-8 border-b border-gray-100 z-40">
                 <div className="flex items-center gap-2">
                     <span className="text-gray-400 text-sm">Projects</span>
                     <span className="text-gray-300 text-sm">›</span>
@@ -87,7 +87,7 @@ export default function Projects() {
                                     onChange={(e) => setHideCompleted(e.target.checked)}
                                     className="sr-only peer"
                                 />
-                                <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-black after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full" />
+                                <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-black after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full" />
                             </div>
                         </label>
 
@@ -131,7 +131,7 @@ export default function Projects() {
 
                                                 {/* PROJECT NAME WITH DOT */}
                                                 <div className="flex items-center gap-3 mb-1.5">
-                                                    <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
+                                                    <div className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: color }} />
                                                     <h2 className="text-lg font-bold text-gray-900">{project.name}</h2>
                                                 </div>
 

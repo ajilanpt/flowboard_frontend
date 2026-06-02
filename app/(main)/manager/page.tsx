@@ -227,7 +227,7 @@ export default function ManagerDashboard() {
         <div className="min-h-screen bg-[#f7f3f2]">
 
             {/* FIXED HEADER */}
-            <header className="fixed top-0 right-0 left-[72px] h-16 bg-[#f7f3f2] flex justify-between items-center px-8 z-40">
+            <header className="fixed top-0 right-0 left-18 h-16 bg-[#f7f3f2] flex justify-between items-center px-8 z-40">
                 <div className="flex items-center gap-2">
                     <span className="text-gray-400 text-sm cursor-pointer hover:text-gray-600" onClick={() => router.push('/projects')}>Projects</span>
                     <span className="text-gray-300 text-sm">›</span>
@@ -258,7 +258,7 @@ export default function ManagerDashboard() {
                     {statCards.map(card => (
                         <div
                             key={card.label}
-                            className={`min-w-[180px] flex-1 rounded-[28px] p-5 flex flex-col items-center text-center shadow-sm border
+                            className={`min-w-45 flex-1 rounded-[28px] p-5 flex flex-col items-center text-center shadow-sm border
                                 ${card.danger ? 'bg-red-50 border-red-200' : 'bg-white border-gray-100'}`}
                         >
                             <div className={`mb-2 ${card.danger ? 'text-red-600' : 'text-gray-500'}`}>
@@ -286,7 +286,7 @@ export default function ManagerDashboard() {
                                 className="flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-gray-900 transition-colors"
                             >
                                 <span className={`w-9 h-5 rounded-full transition-colors relative ${showCompleted ? 'bg-black' : 'bg-gray-300'}`}>
-                                    <span className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-all ${showCompleted ? 'left-[18px]' : 'left-0.5'}`} />
+                                    <span className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-all ${showCompleted ? 'left-4.5' : 'left-0.5'}`} />
                                 </span>
                                 {showCompleted ? 'Hiding nothing' : `Hidden: ${completedCount} done`}
                             </button>
@@ -401,7 +401,7 @@ export default function ManagerDashboard() {
                     </div>
                     <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
                         <div className="overflow-x-auto">
-                            <table className="w-full text-left min-w-[700px]">
+                            <table className="w-full text-left min-w-175">
                                 <thead className="bg-[#f7f3f2] border-b border-gray-200">
                                     <tr>
                                         <th className="p-5 text-[11px] font-bold uppercase tracking-widest text-gray-400">Priority</th>
@@ -460,7 +460,7 @@ export default function ManagerDashboard() {
                     <h2 className="text-xl font-bold text-gray-900 px-1">Employee Performance KPIs</h2>
                     <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
                         <div className="overflow-x-auto">
-                            <table className="w-full text-left min-w-[800px]">
+                            <table className="w-full text-left min-w-200">
                                 <thead className="bg-[#f7f3f2] border-b border-gray-200">
                                     <tr>
                                         <th className="p-5 text-[11px] font-bold uppercase tracking-widest text-gray-400">Name &amp; Role</th>

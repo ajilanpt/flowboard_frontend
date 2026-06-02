@@ -201,7 +201,7 @@ export default function KanbanPage() {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&display=swap');`}</style>
 
       {/* TOP BAR */}
-      <header className="fixed top-0 right-0 left-[72px] h-16 flex items-center justify-between px-8 z-40" style={{ background: '#fdf8f8' }}>
+      <header className="fixed top-0 right-0 left-18 h-16 flex items-center justify-between px-8 z-40" style={{ background: '#fdf8f8' }}>
         <div className="flex items-center gap-2">
           <span className="text-sm cursor-pointer hover:text-gray-700" style={{ color: '#78767b' }}
             onClick={() => router.push('/projects')}>Projects</span>
@@ -215,7 +215,7 @@ export default function KanbanPage() {
 
       {/* CONTENT */}
       <div className="ml-0 pt-16 min-h-screen">
-        <div className="max-w-[1440px] mx-auto px-8 py-8">
+        <div className="max-w-360 mx-auto px-8 py-8">
 
           {/* STAGE HEADER ROW */}
           <div className="flex justify-between items-end mb-10">
@@ -309,7 +309,7 @@ export default function KanbanPage() {
                         <div
                           ref={provided.innerRef}
                           {...provided.droppableProps}
-                          className="flex flex-col gap-4 rounded-[24px] transition-colors"
+                          className="flex flex-col gap-4 rounded-3xl transition-colors"
                           style={{
                             minHeight: 'calc(100vh - 280px)',
                             background: snapshot.isDraggingOver ? 'rgba(0,0,0,0.02)' : 'transparent',
@@ -328,7 +328,7 @@ export default function KanbanPage() {
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
                                     onClick={() => router.push(`/dashboard/${task.id}`)}
-                                    className="group relative p-6 rounded-[24px] overflow-hidden cursor-grab active:cursor-grabbing"
+                                    className="group relative p-6 rounded-3xl overflow-hidden cursor-grab active:cursor-grabbing"
                                     style={{
                                       ...provided.draggableProps.style,
                                       background: '#ffffff',
@@ -442,7 +442,7 @@ export default function KanbanPage() {
 
                           {/* EMPTY STATE */}
                           {colTasks.length === 0 && (
-                            <div className="border-2 border-dashed rounded-[24px] h-32 flex flex-col items-center justify-center gap-2 transition-all"
+                            <div className="border-2 border-dashed rounded-3xl h-32 flex flex-col items-center justify-center gap-2 transition-all"
                               style={{ borderColor: 'rgba(120,118,123,0.2)', color: 'rgba(120,118,123,0.4)' }}>
                               <svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

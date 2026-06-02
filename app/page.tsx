@@ -35,6 +35,8 @@ export default function Home() {
         placeholder="email"
         value={email}
         onChange={(e)=>setEmail(e.target.value)}
+        autoComplete="off"
+        suppressHydrationWarning
         className="w-full border border-gray-200 rounded-2xl px-4 py-2.5 text-sm mb-2 outline-none">
         </input>
         <input 
@@ -42,6 +44,8 @@ export default function Home() {
         placeholder="password"
         value={password}
         onChange={(e)=>setPassword(e.target.value)}
+        autoComplete="off"
+        suppressHydrationWarning
         className="w-full border border-gray-200 rounded-2xl px-4 py-2.5 text-sm mb-4 outline-none">
         </input>
         <button
