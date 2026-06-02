@@ -77,8 +77,8 @@ export default function CreateProjectPage() {
 
         {/* ── STEP INDICATORS ── */}
         <div className="flex items-center justify-center mb-8 relative">
-          <div className="absolute top-4 left-1/4 right-1/4 h-[2px] bg-[#ebe7e7]" />
-          <div className="absolute top-4 left-1/4 h-[2px] bg-black transition-all duration-500"
+          <div className="absolute top-4 left-1/4 right-1/4 h-0.5 bg-[#ebe7e7]" />
+          <div className="absolute top-4 left-1/4 h-0.5 bg-black transition-all duration-500"
             style={{ width: progressWidth, maxWidth: '50%' }} />
           <div className="flex justify-between w-full max-w-xs z-10">
             {[{ n: 1, label: 'Details' }, { n: 2, label: 'Team' }, { n: 3, label: 'Stages' }].map(({ n, label }) => (
@@ -348,7 +348,7 @@ export default function CreateProjectPage() {
 
                       {/* Dropdown */}
                       {isOpen && (
-                        <div className="absolute top-9 left-0 z-20 bg-white rounded-xl overflow-hidden min-w-[180px]"
+                        <div className="absolute top-9 left-0 z-20 bg-white rounded-xl overflow-hidden min-w-45"
                           style={{ boxShadow: '0px 8px 24px rgba(0,0,0,0.12)', border: '1px solid #e5e2e1' }}>
                           <div onClick={() => {
                             const updated = [...stages]
