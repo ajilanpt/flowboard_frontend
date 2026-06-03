@@ -301,7 +301,7 @@ export default function ManagerDashboard() {
                                 return (
                                     <div
                                         key={p.id}
-                                        onClick={() => router.push(`/projects/${p.id}/stages`)}
+                                        onClick={() => router.push(`/projects/${p.id}`)}
                                         className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 hover:border-gray-300 transition-all cursor-pointer"
                                     >
                                         <div className="flex justify-between items-start gap-4 mb-5">
@@ -419,7 +419,7 @@ export default function ManagerDashboard() {
                                             return (
                                                 <tr
                                                     key={t.id}
-                                                    onClick={() => router.push(`/tasks/${t.id}`)}
+                                                    onClick={() => router.push(`/dashboard/${t.id}`)}
                                                     className="hover:bg-red-50/40 transition-colors cursor-pointer"
                                                 >
                                                     <td className="p-5">
