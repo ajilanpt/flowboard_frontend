@@ -183,35 +183,43 @@ export default function EmployeeDrawer({ userId, onClose }: Props) {
                                 </div>
                             </div>
 
-                            {/* breakdown bar */}
-                            <div className="flex gap-0.5 h-2.5 w-full rounded-full overflow-hidden bg-gray-200 mb-4">
-                                <div className="bg-black" style={{ width: `${detail.score.breakdown.on_time_rate}%` }} />
-                                <div className="bg-black/70" style={{ width: `${detail.score.breakdown.completion_speed}%` }} />
-                                <div className="bg-black/50" style={{ width: `${detail.score.breakdown.consistency}%` }} />
-                                <div className="bg-gray-500" style={{ width: `${detail.score.breakdown.stage_leadership}%` }} />
-                                <div className="bg-gray-400" style={{ width: `${detail.score.breakdown.stage_contribution}%` }} />
-                            </div>
+                           {/* breakdown bar */}
+<div className="flex gap-1 h-2.5 w-full rounded-full overflow-hidden mb-4">
+    {[
+        { earned: detail.score.breakdown.on_time_rate,       max: 25, dark: 'bg-black' },
+        { earned: detail.score.breakdown.completion_speed,   max: 20, dark: 'bg-black/70' },
+        { earned: detail.score.breakdown.consistency,        max: 15, dark: 'bg-black/50' },
+        { earned: detail.score.breakdown.stage_leadership,   max: 25, dark: 'bg-gray-500' },
+        { earned: detail.score.breakdown.stage_contribution, max: 15, dark: 'bg-gray-400' },
+    ].map((seg, i) => (
+        <div key={i} className="flex rounded-full overflow-hidden" style={{ width: `${seg.max}%` }}>
+            <div className={seg.dark} style={{ width: `${(seg.earned / seg.max) * 100}%` }} />
+            <div className="bg-gray-200 flex-1" />
+        </div>
+    ))}
+</div>
 
-                            {/* breakdown legend */}
-                            <div className="space-y-1.5">
-                                {[
-                                    { c: 'bg-black', label: 'On-time rate', v: detail.score.breakdown.on_time_rate },
-                                    { c: 'bg-black/70', label: 'Completion speed', v: detail.score.breakdown.completion_speed },
-                                    { c: 'bg-black/50', label: 'Consistency', v: detail.score.breakdown.consistency },
-                                    { c: 'bg-gray-500', label: 'Stage leadership', v: detail.score.breakdown.stage_leadership },
-                                    { c: 'bg-gray-400', label: 'Stage contribution', v: detail.score.breakdown.stage_contribution },
-                                ].map(item => (
-                                    <div key={item.label} className="flex items-center justify-between text-sm">
-                                        <div className="flex items-center gap-2">
-                                            <span className={`w-2.5 h-2.5 rounded-full ${item.c}`} />
-                                            <span className="text-gray-600">{item.label}</span>
-                                        </div>
-                                        <span className="font-bold text-gray-900">{item.v} pts</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
+{/* breakdown legend */}
+<div className="space-y-1.5">
+    {[
+        { c: 'bg-black',    label: 'On-time rate',        v: detail.score.breakdown.on_time_rate,       max: 25 },
+        { c: 'bg-black/70', label: 'Completion speed',    v: detail.score.breakdown.completion_speed,   max: 20 },
+        { c: 'bg-black/50', label: 'Consistency',         v: detail.score.breakdown.consistency,        max: 15 },
+        { c: 'bg-gray-500', label: 'Stage leadership',    v: detail.score.breakdown.stage_leadership,   max: 25 },
+        { c: 'bg-gray-400', label: 'Stage contribution',  v: detail.score.breakdown.stage_contribution, max: 15 },
+    ].map(item => (
+        <div key={item.label} className="flex items-center justify-between text-sm">
+            <div className="flex items-center gap-2">
+                <span className={`w-2.5 h-2.5 rounded-full ${item.c}`} />
+                <span className="text-gray-600">{item.label}</span>
+            </div>
+            <span className="font-bold text-gray-900">
+                {item.v}
+                <span className="font-normal text-gray-300"> / {item.max}</span>
+            </span>
+        </div>
+    ))}
+</div>
                         {/* ===== TASK STATS ===== */}
                         <div>
                             <h3 className="text-sm font-bold text-gray-900 mb-3 px-1">Task Stats</h3>
